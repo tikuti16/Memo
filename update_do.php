@@ -1,21 +1,18 @@
 <?php
   require_once('dbconnect.php');
 
-  include('_parts/_header.php');
+  include('parts/header.php');
 
 ?>
 
       <main>
-        <h2>Practice</h2>
-        <pre>
+        <div class="window">
           <?php
-
-
           $statement = $db->prepare('UPDATE memos SET memo=? WHERE id=?');
           $statement->execute(array($_POST['memo'], $_POST['id']));
           ?>
           <p>メモの内容を変更しました</p>
-        </pre>
+        </div>
 
 <?php
-  include('_parts/_footer.php');
+  include('parts/footer.php');

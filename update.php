@@ -1,13 +1,12 @@
 <?php
   require_once('dbconnect.php');
 
-  include('_parts/_header.php');
+  include('parts/header.php');
 
 ?>
 
       <main>
-        <h2>Practice</h2>
-
+        <!-- 選択したデータの取得 -->
         <?php
          if (isset($_REQUEST['id']) && is_numeric($_REQUEST['id'])) {
             $id = $_REQUEST['id'];
@@ -16,11 +15,12 @@
             $memo = $memos->fetch();
          }
         ?>
-
+        <!-- 編集フォーム -->
         <form action="update_do.php" method="post">
           <input type="hidden" name="id" value="<?php print($id); ?>">
           <textarea name="memo" cols="50" rows="10"><?php print($memo['memo']); ?></textarea><br>
           <button type="submit">登録する</button>
         </form>
+
 <?php
-  include('_parts/_footer.php');
+  include('parts/footer.php');
