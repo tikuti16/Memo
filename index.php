@@ -1,22 +1,12 @@
-<!doctype html>
-<html lang="ja">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<?php
+  require_once('dbconnect.php');
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/style.css">
+  include('_parts/_header.php');
 
-    <title>PHP</title>
-  </head>
-    <body>
-      <header>
-        <h1 class="font-weight-normal">PHP</h1>    
-      </header>
+?>
 
       <main>
-        <div><a href="input.html">メモを作成する</a></div>
+        <div><a href="input.php">メモを作成する</a></div>
         <pre>
           <?php
             require('dbconnect.php');
@@ -55,6 +45,5 @@
             <?php endif; ?>
           </article>
         </pre>
-      </main>
-    </body>    
-</html>
+<?php
+  include('_parts/_footer.php');
